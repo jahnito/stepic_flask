@@ -10,8 +10,8 @@ td {
 .cell {
     padding: 5px;
     background: whitesmoke;
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 20px;
 }
 
 .living-cell {
@@ -37,12 +37,12 @@ a, table {
 
 .home {
     top: 5%;
-    left: 45%;
+    left: 35%;
 }
 
 .refresh {
     top: 5%;
-    left: 55%;
+    left: 65%;
 }
 
 .counter {

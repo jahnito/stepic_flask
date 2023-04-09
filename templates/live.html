@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-    <div class="counter">{{ g.counter }}</div>
+
     <a class="btn btn-warning home" href="/">На главную</a>
     <a class="btn btn-info refresh" href="/live">Создать новую жизнь</a>
 
-    <div>
+    <div class="counter">{{ g.counter }}</div>
+
     <table class="world">
     {% for i in range(g._GameOfLife__width) %}
         <tr>
         {% for j in range(g._GameOfLife__height) %}
             {% if g.world[i][j] %}
-            <td class="cell living-cell"></td>
-            {% elif g.counter == 1 and g.old_world[i][j]  %}
             <td class="cell living-cell"></td>
             {% elif g.counter > 1 and not g.world[i][j] and g.old_world[i][j] %}
             <td class="cell dead-cell"></td>
@@ -23,9 +22,7 @@
         </tr>
     {% endfor %}
     </table>
-    </div>
 {% endblock %}
-
 {% block scripts %}
     {{ super() }}
     <script>setInterval( () => window.location.reload(), 1000);</script>
