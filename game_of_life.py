@@ -24,8 +24,9 @@ class GameOfLife(metaclass=SingletonMeta):
         self.old_world = deepcopy(self.world)
 
     def form_new_generation(self):
+        if self.counter != 0:
+            self.old_world = deepcopy(self.world)
         self.counter += 1
-        self.old_world = deepcopy(self.world)
         universe = self.world
         new_world = [[0 for _ in range(self.__width)] for _ in range(self.__height)]
 

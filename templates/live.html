@@ -12,7 +12,9 @@
         {% for j in range(g._GameOfLife__height) %}
             {% if g.world[i][j] %}
             <td class="cell living-cell"></td>
-            {% elif not g.world[i][j] and g.old_world[i][j] %}
+            {% elif g.counter == 1 and g.old_world[i][j]  %}
+            <td class="cell living-cell"></td>
+            {% elif g.counter > 1 and not g.world[i][j] and g.old_world[i][j] %}
             <td class="cell dead-cell"></td>
             {% else %}
             <td class="cell cell"></td>
@@ -26,5 +28,5 @@
 
 {% block scripts %}
     {{ super() }}
-    <script>setInterval( () => window.location.reload(), 1000);</script>
+    <!-- <script>setInterval( () => window.location.reload(), 1000);</script> -->
 {% endblock %}

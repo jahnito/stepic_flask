@@ -14,9 +14,6 @@ def index():
 def live():
     g = GameOfLife()
     g.form_new_generation()
-    # print(g._GameOfLife__height)
-    # print(g._GameOfLife__width)
-    # print(g.world)
     return render_template('live.html', g=g)
 
 
